@@ -1,0 +1,135 @@
+<app-header></app-header>
+
+<div class="agenda">
+
+  <div class="calendar">
+    <a class="info">Selecione a data:</a>
+    <mat-card class="demo-inline-calendar-card">
+      <mat-calendar [(selected)]="selected" (viewChanged)="addEvent('input', selected)" (selectedChange)="addEvent('change', selected)"></mat-calendar>
+    </mat-card>
+  </div>
+
+  <div class="dados">
+
+    <ng-template [ngIf]="loadingData">
+      <div class="spinner">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
+
+    <ng-container class="dados">
+      <div class="horario_">
+        <mat-card class="cardHorario">
+          <mat-card-header>
+            <mat-card-title>14:00</mat-card-title>
+            <mat-card-subtitle>{{ agenda1.nome_medico }}</mat-card-subtitle>
+          </mat-card-header>
+          <ng-template [ngIf]="agenda1.nome_medico">
+            <a>Contador(a): {{ agenda1.prestador }}</a>
+            <div class="bts_acao">
+              <button mat-button class="bt_atualizar" (click)="updateAgendamento('14:00')">Visualizar</button>
+              <button mat-button class="bt_excluir" (click)="deleteHorario('14:00')">Excluir</button>
+            </div>
+          </ng-template>
+        </mat-card>
+        <mat-card class="cardHorario">
+          <mat-card-header>
+            <mat-card-title>14:30</mat-card-title>
+            <mat-card-subtitle>{{ agenda2.nome_medico }}</mat-card-subtitle>
+          </mat-card-header>
+          <ng-template [ngIf]="agenda2.nome_medico">
+            <a>Contador(a): {{ agenda2.prestador }}</a>
+            <div class="bts_acao">
+              <button mat-button class="bt_atualizar" (click)="updateAgendamento('14:30')">Visualizar</button>
+              <button mat-button class="bt_excluir" (click)="deleteHorario('14:30')">Excluir</button>
+            </div>
+          </ng-template>
+        </mat-card>
+        <mat-card class="cardHorario">
+          <mat-card-header>
+            <mat-card-title>15:00</mat-card-title>
+            <mat-card-subtitle>{{ agenda3.nome_medico }}</mat-card-subtitle>
+          </mat-card-header>
+          <ng-template [ngIf]="agenda3.nome_medico">
+            <a>Contador(a): {{ agenda3.prestador }}</a>
+            <div class="bts_acao">
+              <button mat-button class="bt_atualizar" (click)="updateAgendamento('15:00')">Visualizar</button>
+              <button mat-button class="bt_excluir" (click)="deleteHorario('15:00')">Excluir</button>
+            </div>
+          </ng-template>
+        </mat-card>
+      </div>
+      <div class="horario_">
+        <mat-card class="cardHorario">
+          <mat-card-header>
+            <mat-card-title>15:30</mat-card-title>
+            <mat-card-subtitle>{{ agenda4.nome_medico }}</mat-card-subtitle>
+          </mat-card-header>
+          <ng-template [ngIf]="agenda4.nome_medico">
+            <a>Contador(a): {{ agenda4.prestador }}</a>
+            <div class="bts_acao">
+              <button mat-button class="bt_atualizar" (click)="updateAgendamento('15:30')">Visualizar</button>
+              <button mat-button class="bt_excluir" (click)="deleteHorario('15:30')">Excluir</button>
+            </div>
+          </ng-template>
+        </mat-card>
+        <mat-card class="cardHorario">
+          <mat-card-header>
+            <mat-card-title>16:00</mat-card-title>
+            <mat-card-subtitle>{{ agenda5.nome_medico }}</mat-card-subtitle>
+          </mat-card-header>
+          <ng-template [ngIf]="agenda5.nome_medico">
+            <a>Contador(a): {{ agenda5.prestador }}</a>
+            <div class="bts_acao">
+              <button mat-button class="bt_atualizar" (click)="updateAgendamento('16:00')">Visualizar</button>
+              <button mat-button class="bt_excluir" (click)="deleteHorario('16:00')">Excluir</button>
+            </div>
+          </ng-template>
+        </mat-card>
+        <mat-card class="cardHorario">
+          <mat-card-header>
+            <mat-card-title>16:30</mat-card-title>
+            <mat-card-subtitle>{{ agenda6.nome_medico }}</mat-card-subtitle>
+          </mat-card-header>
+          <ng-template [ngIf]="agenda6.nome_medico">
+            <a>Contador(a): {{ agenda6.prestador }}</a>
+            <div class="bts_acao">
+              <button mat-button class="bt_atualizar" (click)="updateAgendamento('16:30')">Visualizar</button>
+              <button mat-button class="bt_excluir" (click)="deleteHorario('16:30')">Excluir</button>
+            </div>
+          </ng-template>
+        </mat-card>
+      </div>
+      <div class="horario_">
+        <mat-card class="cardHorario">
+          <mat-card-header>
+            <mat-card-title>17:00</mat-card-title>
+            <mat-card-subtitle>{{ agenda7.nome_medico }}</mat-card-subtitle>
+          </mat-card-header>
+          <ng-template [ngIf]="agenda7.nome_medico">
+            <a>Contador(a): {{ agenda7.prestador }}</a>
+            <div class="bts_acao">
+              <button mat-button class="bt_atualizar" (click)="updateAgendamento('17:00')">Visualizar</button>
+              <button mat-button class="bt_excluir" (click)="deleteHorario('17:00')">Excluir</button>
+            </div>
+          </ng-template>
+        </mat-card>
+        <mat-card class="cardHorario">
+          <mat-card-header>
+            <mat-card-title>17:30</mat-card-title>
+            <mat-card-subtitle>{{ agenda8.nome_medico }}</mat-card-subtitle>
+          </mat-card-header>
+          <ng-template [ngIf]="agenda8.nome_medico">
+            <a>Contador(a): {{ agenda8.prestador }}</a>
+            <div class="bts_acao">
+              <button mat-button class="bt_atualizar" (click)="updateAgendamento('17:30')">Visualizar</button>
+              <button mat-button class="bt_excluir" (click)="deleteHorario('17:30')">Excluir</button>
+            </div>
+          </ng-template>
+        </mat-card>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+

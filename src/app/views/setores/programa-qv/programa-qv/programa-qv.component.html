@@ -1,0 +1,265 @@
+<app-header></app-header>
+
+<mat-tab-group (selectedIndexChange)="atualizarPagina()">
+  
+  <mat-tab label="NUTRI/ED FISICO">
+        
+    <div class="agenda">
+      
+      <div class="calendar">
+        <a class="info">Selecione a data:</a>
+        <mat-card class="demo-inline-calendar-card">
+          <mat-calendar [(selected)]="selected" (viewChanged)="addEvent('input', selected, 'nutriEdFisico')" (selectedChange)="addEvent('change', selected, 'nutriEdFisico')"></mat-calendar>
+        </mat-card><br>
+      <!--
+        <a>
+          Horários dos atendimentos do Setor:
+          <br>
+          <strong>Nutri. e Ed. Físico:</strong><br>
+          Quarta - 08:00 às 10:00<br>
+          Quinta - 08:00 às 10:00<br>
+          <strong>Psicóloga</strong><br>
+          Sexta - 10:00 às 12:00<br>
+        </a>
+      -->
+      </div>
+      
+      <div class="dados">
+
+        <ng-template [ngIf]="loadingData">
+          <div class="spinner@@">
+            <mat-spinner></mat-spinner>
+          </div>
+        </ng-template>
+
+        <ng-container class="dados">
+          <div class="horario_">
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>08:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda0800.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda0800.nome_medico">
+                <a>Prestador(a): {{ agenda0800.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('08:00', 'nutriEdFisico')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('08:00', 'nutriEdFisico')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>09:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda0900.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda0900.nome_medico">
+                <a>Prestador(a): {{ agenda0900.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('09:00', 'nutriEdFisico')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('09:00', 'nutriEdFisico')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>10:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda1000.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda1000.nome_medico">
+                <a>Prestador(a): {{ agenda1000.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('10:00', 'nutriEdFisico')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('10:00', 'nutriEdFisico')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+          </div>
+          <div class="horario_">
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>11:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda1100.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda1100.nome_medico">
+                <a>Prestador(a): {{ agenda1100.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('11:00', 'nutriEdFisico')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('11:00', 'nutriEdFisico')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>12:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda1200.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda1200.nome_medico">
+                <a>Prestador(a): {{ agenda1200.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('12:00', 'nutriEdFisico')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('12:00', 'nutriEdFisico')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>13:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda1300.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda1300.nome_medico">
+                <a>Prestador(a): {{ agenda1300.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('13:00','nutriEdFisico')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('13:00', 'nutriEdFisico')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>14:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda1400.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda1400.nome_medico">
+                <a>Prestador(a): {{ agenda1400.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('14:00','nutriEdFisico')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('14:00', 'nutriEdFisico')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+  </mat-tab>
+  <!-------------------------    PSICOLOGA    ------------------------------->
+  <mat-tab label="PSICOLOGA" (click)="mostrar()">
+    
+    <div class="agenda3">
+    
+      <div class="calendar">
+       
+        <a class="info">Selecione a data:</a>
+        <mat-card class="demo-inline-calendar-card">
+          <mat-calendar [(selected)]="selected" (viewChanged)="addEvent('input', selected, 'psicologa')" (selectedChange)="addEvent('change', selected, 'psicologa')"></mat-calendar>
+        </mat-card><br>
+      </div>
+
+      <div class="dados">
+
+        <ng-template [ngIf]="loadingData">
+          <div class="spinner">
+            <mat-spinner></mat-spinner>
+          </div>
+        </ng-template>
+
+        <ng-container class="dados">
+          <div class="horario_">
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>10:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda1000.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda1000.nome_medico">
+                <a>Prestador(a): {{ agenda1000.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('10:00', 'psicologa')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('10:00', 'psicologa')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>11:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda1100.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda1100.nome_medico">
+                <a>Prestador(a): {{ agenda1100.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('11:00', 'psicologa')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('11:00', 'psicologa')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>12:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda1200.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda1200.nome_medico">
+                <a>Prestador(a): {{ agenda1200.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('12:00', 'psicologa')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('12:00', 'psicologa')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>14:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda1400.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda1400.nome_medico">
+                <a>Prestador(a): {{ agenda1400.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('14:00', 'psicologa')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('14:00', 'psicologa')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+          </div>
+          <div class="horario_">
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>15:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda1500.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda1500.nome_medico">
+                <a>Prestador(a): {{ agenda1500.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('15:00', 'psicologa')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('15:00', 'psicologa')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>16:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda1600.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda1600.nome_medico">
+                <a>Prestador(a): {{ agenda1600.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('16:00', 'psicologa')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('16:00', 'psicologa')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+            <mat-card class="cardHorario">
+              <mat-card-header>
+                <mat-card-title>17:00</mat-card-title>
+                <mat-card-subtitle>{{ agenda1700.nome_medico }}</mat-card-subtitle>
+              </mat-card-header>
+              <ng-template [ngIf]="agenda1700.nome_medico">
+                <a>Prestador(a): {{ agenda1700.prestador }}</a>
+                <div class="bts_acao">
+                  <button mat-button class="bt_atualizar" (click)="updateAgendamento('17:00', 'psicologa')">Visualizar</button>
+                  <button mat-button class="bt_excluir" (click)="deleteHorario('17:00', 'psicologa')">Excluir</button>
+                </div>
+              </ng-template>
+            </mat-card>
+          </div>
+        </ng-container>
+      </div>
+
+    </div>
+
+  </mat-tab>
+
+</mat-tab-group>
+
+
+  <!--
+      
+    -->

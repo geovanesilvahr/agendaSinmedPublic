@@ -1,0 +1,177 @@
+/* Layout */
+.agenda {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    background: linear-gradient(to right, #074932, #047656);
+    padding: 20px;
+    height: 600px;
+}
+
+.agenda2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    background: linear-gradient(to right, #073049, #040676);
+    padding: 20px;
+    height: 600px;
+}
+
+.agenda3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    background: linear-gradient(to right, #3f4907, #766504);
+    padding: 20px;
+    height: 610px;
+}
+
+.calendar {
+    width: 300px;
+    margin-right: 20px;
+}
+
+.dados {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.bt_atualizarCalendario {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.bts_acao{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Botões */
+.bts_acao {
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço disponível entre os botões */
+    width: 100%; /* Garante que os botões ocupem 100% da largura do card */
+    margin-top: auto; /* Move os botões para a parte inferior do card */
+}
+
+/* Botão */
+.bt_atualizar {
+    width: 6rem;
+    color: #ffffff;
+    background-color: rgb(56, 116, 0);
+}
+
+.bt_excluir {
+    width: 6rem;
+    color: #ffffff;
+    background-color: rgb(128, 0, 0);
+}
+
+
+.horario_ {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: 20px;
+}
+
+/* Cards */
+.cardHorario {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza verticalmente */
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 190px;
+
+    /* Adiciona uma borda colorida */
+    border: 1px solid #145012; /* Cor de exemplo: substitua pela cor desejada */
+}
+
+.crm {
+    color: #000000;
+}
+
+.cardHorario>a {
+    margin-left: 20px;
+}
+
+.atd {
+    color: rgb(13, 255, 0);
+}
+
+.info{
+    font-size: 20px;
+    color: #ffffff;
+    font-style: oblique;
+}
+
+/* Spinner */
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9eb9bb;
+}
+
+/* Textos */
+mat-card-subtitle {
+    color: #f40541;
+    font-size: 15px;
+}
+
+mat-card-header,
+mat-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.notificacao {
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+
+/* Margens e espaçamento */
+h1 {
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.mat-card-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Outros ajustes */
+.body {
+    height: 100%;
+    min-height: 100vh;
+    /* Garante que o conteúdo preencha a altura da tela */
+}
+
+@media (max-width: 700px) {
+    .agenda {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    .calendar{
+        margin-bottom: 5px;
+    }
+}

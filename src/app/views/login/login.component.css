@@ -1,0 +1,55 @@
+.login{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #0c1733, #056f6f);
+}
+
+.card {
+    border-radius: 80px;
+}
+
+.card-form{
+    display: flex;
+    background-color:#86cabb;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 320px;
+    border-radius: 30px 30px 0px 0px;
+}
+
+img{
+    height: 200px;
+}
+
+mat-form-field {
+    width: 250px;
+}
+
+.lb-login{
+    font-family: sans-serif;
+}
+
+button{
+    width: 250px;
+    font-family: sans-serif;
+}
+
+mat-card-title{
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 30px 30px;
+    width: 360px;
+}

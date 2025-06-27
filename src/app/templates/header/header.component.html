@@ -1,0 +1,28 @@
+<mat-toolbar class="header">
+
+  <img class="logo" src="assets/images/logo_sinmed.png" alt="logo">
+
+  <div class="opcoes">
+    <a class="bt_calendario" [class.selecionado]="isLinkActive('/juridico')" routerLink="/juridico">Juridico</a>
+    <a class="bt_calendario" [class.selecionado]="isLinkActive('/contabil')" routerLink="/contabil">Contábil</a>
+    <a class="bt_calendario" [class.selecionado]="isLinkActive('/programaqv')" routerLink="/programaqv">Programa QV</a>
+  </div>
+
+  <div>
+    <button mat-button class="bt_agendar" [class.selecionado]="isLinkActive('/agendamento')"
+      routerLink="/agendamento">Agendar</button>
+    <button mat-button class="bt_encaixe" [class.selecionado]="isLinkActive('/encaixe')"
+      routerLink="/encaixe">Adicionar Encaixe</button>
+    <a>Olá, {{ nome[0] | uppercase }}!</a>
+    <button mat-icon-button class="bt_user" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <img class="icon" src="assets/images/user.png">
+    </button>
+    <mat-menu #menu="matMenu">
+      <button (click)="sair()" mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Sair</span>
+      </button>
+    </mat-menu>
+  </div>
+
+</mat-toolbar>

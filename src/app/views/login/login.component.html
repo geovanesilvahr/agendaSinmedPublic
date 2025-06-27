@@ -1,0 +1,27 @@
+<div class="login">
+
+    <img src="assets/images/logo_sinmed.png">
+
+    <mat-card class="card">
+        <form class="card-form" [formGroup]="loginForm" (ngSubmit)="login()">
+            <mat-card-title class="lb-login">Login</mat-card-title>
+            <mat-form-field>
+                <mat-label>Usuario</mat-label>
+                <input [(ngModel)]="usuario.email" matInput class="form-control" formControlName="email">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Senha</mat-label>
+                <input type="password" [(ngModel)]="usuario.password" matInput class="form-control"
+                    formControlName="password">
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit">Entrar</button>
+
+        </form>
+    </mat-card>
+    <mat-toolbar class="footer">
+        <span>
+            v.{{ version }}
+        </span>
+    </mat-toolbar>
+</div>

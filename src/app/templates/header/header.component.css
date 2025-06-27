@@ -1,0 +1,69 @@
+.logo {
+    height: 100%;
+}
+
+.icon {
+    height: 35px;
+    width: 35px;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right,rgb(12, 75, 75), #0c1733);
+}
+
+.bt_desativado {
+    color: #999999
+}
+
+a{
+    color: aliceblue;
+}
+
+.opcoes a {
+    position: relative;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.opcoes a.selecionado::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f7f7f7;
+}
+
+.bt_user{
+    align-items: center;
+}
+
+.bt_agendar, .bt_encaixe {
+    background-color: rgb(91, 250, 91);
+    margin-right: 30px;
+    margin-bottom: 10px;
+    width: 100px;
+    color: rgb(0, 0, 0);
+}
+
+.bt_encaixe{
+    width: 160px;
+    background-color: rgb(13, 84, 151);
+    color: rgb(255, 255, 255);
+}
+
+.bt_calendario {
+    color: rgb(226, 226, 226);
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    color: aliceblue;
+}

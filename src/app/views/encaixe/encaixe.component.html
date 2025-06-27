@@ -1,0 +1,84 @@
+<app-header></app-header>
+
+<div class="agendamento">
+
+    <!-- 
+        <div class="calendar">
+    
+            <a class="info">Selecione a data:</a>
+            <mat-card class="demo-inline-calendar-card">
+                <mat-calendar [(selected)]="selected" (viewChanged)="addEvent()"
+                    (selectedChange)="addEvent()"></mat-calendar>
+            </mat-card><br>
+    
+        </div>    
+    -->
+
+    <div class="card">
+        <a class="lb">Adicionar Encaixe</a>
+        <form class="card-form" [formGroup]="agendaForm" (ngSubmit)="verificarAgenda()">
+            <mat-form-field class="cliente">
+                <mat-label>Nome do Médico</mat-label>
+                <input matInput [(ngModel)]="agenda.nome_medico" type="text" formControlName="nome_medico">
+            </mat-form-field>
+            <div class="idTel">
+                <mat-form-field class="id">
+                    <mat-label>CRM</mat-label>
+                    <input matInput [(ngModel)]="agenda.crm" type="number" formControlName="crm">
+                </mat-form-field>
+                <mat-form-field class="atd">
+                    <mat-label>Atendimento</mat-label>
+                    <mat-select matInput [(ngModel)]="agenda.atendimento" name="atendimento"
+                        formControlName="atendimento">
+                        <mat-option *ngFor="let atd of atendimento" [value]="atd.value">
+                            {{ atd.value }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="tel">
+                    <mat-label>Telefone</mat-label>
+                    <input matInput [(ngModel)]="agenda.telefone" type="tel" formControlName="telefone"
+                        placeholder="(00)0 0000-0000">
+                </mat-form-field>
+            </div>
+            <div class="select">
+                <mat-form-field class="adv">
+                    <mat-label>Prestador(a)</mat-label>
+                    <mat-select matInput [(ngModel)]="prestador_select" name="prestador" formControlName="prestador">
+                        <mat-option *ngFor="let adv of prestadores" [value]="adv.value">
+                            {{adv.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="data">
+                    <mat-label>Data</mat-label>
+                    <input matInput [(ngModel)]="agenda.data" [readonly]="true" formControlName="data" name="data"
+                        [matDatepickerFilter]="myFilter" [matDatepicker]="picker">
+                    <mat-hint class="texto">clique no calendario</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker disabled="false"></mat-datepicker>
+                </mat-form-field>
+
+            </div>
+            <div class="email_encaixe">
+                <mat-form-field class="cliente">
+                    <mat-label>Email:</mat-label>
+                    <input matInput [(ngModel)]="agenda.email" type="email" formControlName="email">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="observacao">
+                    <mat-label>Observação</mat-label>
+                    <textarea matInput [(ngModel)]="agenda.observacao" name='observacao' formControlName="observacao"
+                        placeholder="Digite aqui alguma observação"></textarea>
+                </mat-form-field>
+            </div>
+            <div class="bts">
+                <button mat-raised-button color="primary" type="submit">Agendar</button>
+            </div>
+        </form>
+    </div>
+
+</div>

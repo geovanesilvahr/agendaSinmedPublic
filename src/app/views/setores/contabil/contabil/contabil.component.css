@@ -1,0 +1,165 @@
+/* Layout */
+.agenda {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: flex-start;
+    background-color: #ffffff;
+    padding: 20px;
+    min-height: 100%;
+}
+
+.calendar {
+    width: 300px;
+    margin-right: 20px;
+}
+
+.dados {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bt_atualizarCalendario {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.bts_acao {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Botões */
+.bts_acao {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Botão */
+.bt_atualizar {
+    width: 6rem;
+    color: #ffffff;
+    background-color: rgb(56, 116, 0);
+}
+
+.bt_excluir {
+    width: 6rem;
+    color: #ffffff;
+    background-color: rgb(128, 0, 0);
+}
+
+
+.horario_ {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 10px;
+}
+
+/* Cards */
+.cardHorario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 170px; 
+    border: 1px solid #145012;
+}
+
+.crm {
+    color: #000000;
+}
+
+.cardHorario>a {
+    margin-left: 20px;
+}
+
+.atd {
+    color: rgb(13, 255, 0);
+}
+
+.info {
+    font-size: 20px;
+    color: #000000;
+    font-style: sans-serif;
+}
+
+.encaixe {
+    width: 300px;
+}
+
+/* Spinner */
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+/* Textos */
+mat-card-subtitle {
+    color: #f40541;
+    font-size: 15px;
+}
+
+mat-card-header,
+mat-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+mat-expansion-panel-header {
+    width: 100%;
+}
+
+mat-panel-title{
+    width: 8px;
+}
+
+a {
+    font-size: 11.5px;
+    color: #333;
+}
+
+.notificacao {
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+
+/* Margens e espaçamento */
+h1 {
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.mat-card-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.body {
+    height: 100%;
+    min-height: 100vh;
+}
+
+@media (max-width: 700px) {
+    .agenda {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    .calendar {
+        margin-bottom: 5px;
+    }
+}

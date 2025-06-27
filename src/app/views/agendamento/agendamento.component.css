@@ -1,0 +1,79 @@
+.agendamento {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.calendar{
+    margin-top: 50px;
+    width: 300px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    width: 50%;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.texto{
+    color: rgb(0, 0, 0);
+}
+
+.info{
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.lb {
+    font-size: 38px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+}
+
+.cliente {
+    width: 100%;
+}
+
+.idTel {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.idTel .tel {
+    flex-basis: 70%;
+}
+
+.select {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.adv {
+    width: 200px;
+}
+
+.observacao{
+    width: 100%;
+}
+
+.bts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.data {
+    width: 200px;
+}
